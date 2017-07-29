@@ -1,0 +1,79 @@
+#
+# Makefile to build lighting models examples for  M$ Window
+#
+# Author: Alex V. Boreskoff, <steps3d@narod.ru>
+#
+
+!include <win32.mak>
+!include <..\nmake.inc>
+
+INC  = $(INC) -I$(PBUFFERINC)
+EXES = lambert.exe blinn.exe phong.exe Minnaert.exe aniso.exe rim.exe aniso-ward.exe oren-nayar.exe cook-torrance.exe ashikhmin-shirley.exe wrap-around.exe hemisphere.exe bidir.exe tri-light.exe gooch.exe ward.exe lommel-seeliger.exe strauss.exe scatter.exe toon.exe
+
+all: $(EXES)
+
+lambert.exe: lambert.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res
+	$(link) lambert.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res $(LLDLIBS)
+
+wrap-around.exe: wrap-around.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res
+	$(link) wrap-around.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res $(LLDLIBS)
+
+hemisphere.exe: hemisphere.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res
+	$(link) hemisphere.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res $(LLDLIBS)
+
+bidir.exe: bidir.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res
+	$(link) bidir.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res $(LLDLIBS)
+
+tri-light.exe: tri-light.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res
+	$(link) tri-light.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res $(LLDLIBS)
+
+aniso.exe: aniso.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res
+	$(link) aniso.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res $(LLDLIBS)
+
+aniso-ward.exe: aniso-ward.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res
+	$(link) aniso-ward.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res $(LLDLIBS)
+
+blinn.exe: blinn.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) blinn.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+phong.exe: phong.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) phong.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+oren-nayar.exe: oren-nayar.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) oren-nayar.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+cook-torrance.exe: cook-torrance.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) cook-torrance.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+ashikhmin-shirley.exe .exe: ashikhmin-shirley.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj  MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res
+	$(link) ashikhmin-shirley.obj GlslProgram.obj boxes.obj Mesh.obj MeshUtils.obj MeshNode.obj Material.obj Matrix3D.obj libTexture3D.obj $(OBJS) version.res $(LLDLIBS)
+
+rim.exe: rim.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) rim.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+Minnaert.exe: Minnaert.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) Minnaert.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+gooch.exe: gooch.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) gooch.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+toon.exe: toon.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) toon.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+ward.exe: ward.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) ward.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+strauss.exe: strauss.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) strauss.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+scatter.exe: scatter.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) scatter.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+lommel-seeliger.exe: lommel-seeliger.obj GlslProgram.obj boxes.obj $(OBJS) version.res
+	$(link) lommel-seeliger.obj GlslProgram.obj boxes.obj $(OBJS) version.res $(LLDLIBS)
+
+
+clean:
+	@del $(EXES) $(OBJS) version.res *.obj *.ilk *.pdb 2> nul
+
+!include <..\rules.win32>

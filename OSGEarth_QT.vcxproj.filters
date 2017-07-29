@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{b0c1ba49-6714-4ed9-82b3-f29d5fc145ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\CubeMap">
+      <UniqueIdentifier>{0901cb3e-4ea0-4669-9f7a-c5415cc9355a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Lighting">
+      <UniqueIdentifier>{52df67e3-58e2-4e8c-9f8a-2be8c85626ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Special">
+      <UniqueIdentifier>{bb9cc95f-9729-4138-8488-8f7a53f76ed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Water">
+      <UniqueIdentifier>{eafb319c-4125-4eba-95fa-007eaa7e1938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Texture">
+      <UniqueIdentifier>{0c1f6060-d3af-4803-b28c-fa256bed6a7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Effects">
+      <UniqueIdentifier>{da056a07-5b8d-4121-8f24-a2b5ec340408}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateObjects.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderTools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RTT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialTools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DoomManipulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\cube_map.frag">
+      <Filter>Shaders\CubeMap</Filter>
+    </None>
+    <None Include="shaders\cube_map.vert">
+      <Filter>Shaders\CubeMap</Filter>
+    </None>
+    <None Include="shaders\skybox.frag">
+      <Filter>Shaders\CubeMap</Filter>
+    </None>
+    <None Include="shaders\skybox.vert">
+      <Filter>Shaders\CubeMap</Filter>
+    </None>
+    <None Include="shaders\special\aces.frag">
+      <Filter>Shaders\Special</Filter>
+    </None>
+    <None Include="shaders\special\aces.vert">
+      <Filter>Shaders\Special</Filter>
+    </None>
+    <None Include="shaders\lighting\blinn.frag">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\lighting\blinn.vert">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\lighting\gooch.frag">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\lighting\gooch.vert">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\lighting\rim.frag">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\lighting\rim.vert">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\water\water.frag">
+      <Filter>Shaders\Water</Filter>
+    </None>
+    <None Include="shaders\water\water.vert">
+      <Filter>Shaders\Water</Filter>
+    </None>
+    <None Include="shaders\texture\normal_map.frag">
+      <Filter>Shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\texture\normal_map.vert">
+      <Filter>Shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\lighting\phong.frag">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\lighting\phong.vert">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\texture\parallax_map.frag">
+      <Filter>Shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\texture\parallax_map.vert">
+      <Filter>Shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\texture\relief.frag">
+      <Filter>Shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\texture\relief.vert">
+      <Filter>Shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\texture\specular_map.frag">
+      <Filter>Shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\texture\specular_map.vert">
+      <Filter>Shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\texture\ultra_map.frag">
+      <Filter>Shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\texture\ultra_map.vert">
+      <Filter>Shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\special\mountain_fog.frag">
+      <Filter>Shaders\Special</Filter>
+    </None>
+    <None Include="shaders\special\mountain_fog.vert">
+      <Filter>Shaders\Special</Filter>
+    </None>
+    <None Include="shaders\lighting\cook-torrance.frag">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\lighting\cook-torrance.vert">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\lighting\cook-torrance2.frag">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\lighting\cook-torrance2.vert">
+      <Filter>Shaders\Lighting</Filter>
+    </None>
+    <None Include="shaders\effect\blur_reflect.frag">
+      <Filter>Shaders\Effects</Filter>
+    </None>
+    <None Include="shaders\effect\blur_reflect.vert">
+      <Filter>Shaders\Effects</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CreateObjects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RTT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DoomManipulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,75 @@
+#
+#  Makefile to build lighting models examples for Linux
+#
+# Author: Alex V. Boreskoff, <steps3d@narod.ru>
+#
+
+include ../make.inc
+
+all: lambert blinn phong Minnaert aniso rim aniso-ward oren-nayar cook-torrance ashikhmin-shirley wrap-around hemisphere bidir tri-light gooch ward lommel-seeliger strauss scatter toon
+
+lambert: lambert.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+blinn: blinn.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+phong: phong.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+Minnaert: Minnaert.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+aniso: aniso.o GlslProgram.o boxes.o noise3D.o libTexture3D.o Mesh.o MeshNode.o MeshUtils.o Material.o Matrix3D.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+aniso-ward: aniso-ward.o GlslProgram.o boxes.o noise3D.o libTexture3D.o Mesh.o MeshNode.o MeshUtils.o Material.o Matrix3D.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+rim: rim.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+oren-nayar: oren-nayar.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+cook-torrance: cook-torrance.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+ashikhmin-shirley: ashikhmin-shirley.o GlslProgram.o boxes.o Mesh.o MeshUtils.o MeshNode.o Material.o Matrix3D.o libTexture3D.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+wrap-around: wrap-around.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+hemisphere: hemisphere.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+bidir: bidir.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+tri-light: tri-light.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+gooch: gooch.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+toon: toon.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+ward: ward.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+strauss: strauss.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+scatter: scatter.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+lommel-seeliger: lommel-seeliger.o GlslProgram.o boxes.o $(OBJS)
+	cc $(LDFLAGS) $^ -o $@ $(LIBS) $(CG_LIBS) -lc
+
+clean:
+	rm -r -f lambert blinn phong Minneart aniso rim aniso-ward oren-nayar cook-torrance ashikhmin-shirley wrap-around hemisphere bidir tri-light scatter lommel-seeliger toon gooch strauss ward $(OBJS) *.o  2> /dev/null
+
+
+include ../rules.linux

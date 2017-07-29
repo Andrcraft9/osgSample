@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CreateObjects.cpp" />
+    <ClCompile Include="DoomManipulator.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MaterialTools.cpp" />
+    <ClCompile Include="RTT.cpp" />
+    <ClCompile Include="ShaderTools.cpp" />
+    <ClCompile Include="SkyBox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\cube_map.frag" />
+    <None Include="shaders\cube_map.vert" />
+    <None Include="shaders\effect\blur_reflect.frag" />
+    <None Include="shaders\effect\blur_reflect.vert" />
+    <None Include="shaders\lighting\blinn.frag" />
+    <None Include="shaders\lighting\blinn.vert" />
+    <None Include="shaders\lighting\cook-torrance.frag" />
+    <None Include="shaders\lighting\cook-torrance.vert" />
+    <None Include="shaders\lighting\cook-torrance2.frag" />
+    <None Include="shaders\lighting\cook-torrance2.vert" />
+    <None Include="shaders\lighting\gooch.frag" />
+    <None Include="shaders\lighting\gooch.vert" />
+    <None Include="shaders\lighting\phong.frag" />
+    <None Include="shaders\lighting\phong.vert" />
+    <None Include="shaders\lighting\rim.frag" />
+    <None Include="shaders\lighting\rim.vert" />
+    <None Include="shaders\skybox.frag" />
+    <None Include="shaders\skybox.vert" />
+    <None Include="shaders\special\aces.frag" />
+    <None Include="shaders\special\aces.vert" />
+    <None Include="shaders\special\mountain_fog.frag" />
+    <None Include="shaders\special\mountain_fog.vert" />
+    <None Include="shaders\texture\normal_map.frag" />
+    <None Include="shaders\texture\normal_map.vert" />
+    <None Include="shaders\texture\parallax_map.frag" />
+    <None Include="shaders\texture\parallax_map.vert" />
+    <None Include="shaders\texture\relief.frag" />
+    <None Include="shaders\texture\relief.vert" />
+    <None Include="shaders\texture\specular_map.frag" />
+    <None Include="shaders\texture\specular_map.vert" />
+    <None Include="shaders\texture\ultra_map.frag" />
+    <None Include="shaders\texture\ultra_map.vert" />
+    <None Include="shaders\water\water.frag" />
+    <None Include="shaders\water\water.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CreateObjects.h" />
+    <ClInclude Include="DoomManipulator.h" />
+    <ClInclude Include="MaterialTools.h" />
+    <ClInclude Include="RTT.h" />
+    <ClInclude Include="ShaderTools.h" />
+    <ClInclude Include="SkyBox.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{20504E18-08BB-3A0D-A242-5F483F7D8094}</ProjectGuid>
+    <RootNamespace>osgSample</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <ProjectName>osgSample</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>OSGEarth_QT</PrimaryOutput>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>OSGEarth_QT</PrimaryOutput>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>OSGEarth_QT</PrimaryOutput>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>OSGEarth_QT</PrimaryOutput>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)\bin</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">OSGEarth_QT</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">osgSample</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">OSGEarth_QT</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">OSGEarth_QT</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)\bin</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\OSGEarth\osgearth\src;..\..\..\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\include;..\..\..\..\qt\5.3\msvc2010_opengl\include;..\..\..\..\qt\5.3\msvc2010_opengl\include\QtOpenGL;..\..\..\..\qt\5.3\msvc2010_opengl\include\QtWidgets;..\..\..\..\qt\5.3\msvc2010_opengl\include\QtGui;..\..\..\..\qt\5.3\msvc2010_opengl\include\QtCore;release;.;..\..\..\..\qt\5.3\msvc2010_opengl\mkspecs\win32-msvc2010;.\GeneratedFiles;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;QT_NO_DEBUG;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;QT_SQL_LIB;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;D:\Projects\OSGEarth\osgearth\lib\Release\osgEarthUtil.lib;D:\Projects\OSGEarth\osgearth\lib\Release\osgEarthAnnotation.lib;D:\Projects\OSGEarth\osgearth\lib\Release\osgEarthFeatures.lib;D:\Projects\OSGEarth\osgearth\lib\Release\osgEarthSymbology.lib;D:\Projects\OSGEarth\osgearth\lib\Release\osgEarth.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgShadow.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\3rdParty\lib\curllib.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\3rdParty\lib\zlib1.lib;D:\Projects\OSGEarth\gdal-1.11.2\gdal.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgManipulator.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osg.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgWidget.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgUtil.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgSim.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgTerrain.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgDB.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgFX.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgViewer.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgText.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgGA.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgQt.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\OpenThreads.lib;D:\Qt\Qt5.4.2\5.4\msvc2013_64_opengl\lib\Qt5OpenGL.lib;D:\Qt\Qt5.4.2\5.4\msvc2013_64_opengl\lib\Qt5Widgets.lib;D:\Qt\Qt5.4.2\5.4\msvc2013_64_opengl\lib\Qt5Gui.lib;D:\Qt\Qt5.4.2\5.4\msvc2013_64_opengl\lib\Qt5Core.lib;Qt5Core.lib;Qt5Sql.lib;Qt5Gui.lib;Qt5OpenGL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;D:\Projects\OSGEarth\osgearth\lib\Release;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\3rdParty\lib;D:\Projects\OSGEarth\gdal-1.11.2;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\OSGEarth_QT.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;QT_NO_DEBUG;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;QT_NO_DEBUG;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;QT_SQL_LIB;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;ws2_32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;winmm.lib;wldap32.lib;glu32.lib;opengl32.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgShadow.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\3rdParty\lib\libcurl.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\3rdParty\lib\zlib.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\3rdParty\lib\gdal.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgManipulator.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osg.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgWidget.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgUtil.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgSim.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgTerrain.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgDB.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgFX.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgViewer.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgText.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgGA.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgQt.lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\OpenThreads.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\3rdParty\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\osgSample.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;QT_NO_DEBUG;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <CustomBuild>
+      <Command>
+      </Command>
+    </CustomBuild>
+    <CustomBuild>
+      <Message>
+      </Message>
+    </CustomBuild>
+    <CustomBuild>
+      <Outputs>
+      </Outputs>
+    </CustomBuild>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\OSGEarth\osgearth\src;..\..\..\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\include;..\..\..\..\qt\5.3\msvc2010_opengl\include;..\..\..\..\qt\5.3\msvc2010_opengl\include\QtOpenGL;..\..\..\..\qt\5.3\msvc2010_opengl\include\QtWidgets;..\..\..\..\qt\5.3\msvc2010_opengl\include\QtGui;..\..\..\..\qt\5.3\msvc2010_opengl\include\QtCore;debug;.;..\..\..\..\qt\5.3\msvc2010_opengl\mkspecs\win32-msvc2010;.\GeneratedFiles;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtSql;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_SQL_LIB;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;D:\Projects\OSGEarth\osgearth\lib\Release\osgEarthUtil.lib;D:\Projects\OSGEarth\osgearth\lib\Release\osgEarthAnnotation.lib;D:\Projects\OSGEarth\osgearth\lib\Release\osgEarthFeatures.lib;D:\Projects\OSGEarth\osgearth\lib\Release\osgEarthSymbology.lib;D:\Projects\OSGEarth\osgearth\lib\Release\osgEarth.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgShadow.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\3rdParty\lib\curllib.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\3rdParty\lib\zlib1.lib;D:\Projects\OSGEarth\gdal-1.11.2\gdal.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgManipulator.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osg.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgWidget.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgUtil.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgSim.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgTerrain.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgDB.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgFX.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgViewer.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgText.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgGA.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\osgQt.lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib\OpenThreads.lib;$(QTDIR)\lib\Qt5OpenGLd.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Cored.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;Qt5Sqld.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;D:\Projects\OSGEarth\osgearth\lib\Release;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib;D:\Projects\OSGEarth\OpenSceneGraph-3.2.2-rc2\3rdParty\lib;D:\Projects\OSGEarth\gdal-1.11.2;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\OSGEarth_QT.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(CUS_CORE_DIR)\osgearth\src;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\include;$(QTDIR)\include;release;.;$(QTDIR)\mkspecs\win32-msvc2010;.\GeneratedFiles;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;$(CUS_CORE_DIR)\mathlib;$(CUS_CORE_DIR)\ballisticLib;$(CUS_CORE_DIR)\qsofa;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWebKit;$(QTDIR)\include\QtWebKitWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_SQL_LIB;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;ws2_32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;winmm.lib;wldap32.lib;glu32.lib;opengl32.lib;osgEarthQt.lib;osgEarthUtil.lib;osgEarthAnnotation.lib;osgEarthFeatures.lib;osgEarthSymbology.lib;osgEarth.lib;osgShadow.lib;libcurl.lib;zlib.lib;gdal.lib;osgManipulator.lib;osg.lib;osgWidget.lib;osgUtil.lib;osgSim.lib;osgTerrain.lib;osgDB.lib;osgFX.lib;osgViewer.lib;osgText.lib;osgGA.lib;osgQt.lib;OpenThreads.lib;$(QTDIR)\lib\Qt5OpenGL.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5WebKitWidgets.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;$(QTDIR)\lib\Qt5Sql.lib;mathlib.lib;ballisticLib.lib;qsofa.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(CUS_CORE_DIR)\osgearth\lib\Release;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\OpenSceneGraph\lib;$(CUS_CORE_DIR)\OpenSceneGraph-3.2.2-rc2\3rdParty\lib;$(CUS_CORE_DIR)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\OSGEarth_QT.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" Qt5Version_x0020_Win32="Qt 5.3" Qt5Version_x0020_x64="msvc2013_64_opengl" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
